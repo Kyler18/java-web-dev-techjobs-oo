@@ -1,5 +1,4 @@
 package org.launchcode.techjobs_oo.Tests;
-import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.Job;
 import org.launchcode.techjobs_oo.Employer;
@@ -43,8 +42,8 @@ public class JobTests {
     public void testToString(){
 
         Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job newJob1 = new Job("Product tester", new Employer(null), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job newJob2 = new Job(null , new Employer(null), new Location(null), new PositionType(null), new CoreCompetency(null));
+        Job newJob1 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job newJob2 = new Job("" , new Employer("\n\t"), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue(newJob.toString().startsWith("\n"));
         assertTrue(newJob.toString().endsWith("\n"));
 

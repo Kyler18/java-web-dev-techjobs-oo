@@ -55,12 +55,12 @@ public class Job {
     public String toString() {
         String s = "";
         String d = "Data not available";
-         if (this.getName() == null && employer.getValue() == null && location.getValue() == null && positionType.getValue() == null && coreCompetency.getValue() == null) return "OOPS! This job does not seem to exist.";
-         else if (this.getName() == null) this.setName(d);
-         else if (employer.getValue() == null) employer.setValue(d);
-         else if (location.getValue() == null) location.setValue(d);
-         else if (positionType.getValue() == null) positionType.setValue(d);
-         else if (coreCompetency.getValue() == null) coreCompetency.setValue(d);
+         if (this.getName().isBlank() && employer.getValue().isBlank() && location.getValue().isBlank() && positionType.getValue().isBlank() && coreCompetency.getValue().isBlank()) return "OOPS! This job does not seem to exist.";
+         else if (this.getName().isBlank()) this.setName(d);
+         else if (employer.getValue().isBlank()) employer.setValue(d);
+         else if (location.getValue().isBlank()) location.setValue(d);
+         else if (positionType.getValue().isBlank()) positionType.setValue(d);
+         else if (coreCompetency.getValue().isBlank()) coreCompetency.setValue(d);
 
            return "\n" +
                         "\n" + "ID: " + id +
