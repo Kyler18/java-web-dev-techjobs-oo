@@ -43,7 +43,7 @@ public class JobTests {
 
         Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job newJob1 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job newJob2 = new Job("" , new Employer("\n\t"), new Location(""), new PositionType(""), new CoreCompetency(""));
+        Job newJob2 = new Job("" , new Employer("\n\t"), new Location(null), new PositionType(""), new CoreCompetency(""));
         assertTrue(newJob.toString().startsWith("\n"));
         assertTrue(newJob.toString().endsWith("\n"));
 

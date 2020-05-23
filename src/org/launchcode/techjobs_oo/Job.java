@@ -1,5 +1,7 @@
 package org.launchcode.techjobs_oo;
 
+import org.junit.platform.commons.util.StringUtils;
+
 import java.util.Objects;
 
 public class Job {
@@ -53,14 +55,13 @@ public class Job {
 
     @Override
     public String toString() {
-        String s = "";
         String d = "Data not available";
-         if (this.getName().isBlank() && employer.getValue().isBlank() && location.getValue().isBlank() && positionType.getValue().isBlank() && coreCompetency.getValue().isBlank()) return "OOPS! This job does not seem to exist.";
-         else if (this.getName().isBlank()) this.setName(d);
-         else if (employer.getValue().isBlank()) employer.setValue(d);
-         else if (location.getValue().isBlank()) location.setValue(d);
-         else if (positionType.getValue().isBlank()) positionType.setValue(d);
-         else if (coreCompetency.getValue().isBlank()) coreCompetency.setValue(d);
+         if (StringUtils.isBlank(this.getName()) && StringUtils.isBlank(employer.getValue()) && StringUtils.isBlank(location.getValue()) && StringUtils.isBlank(positionType.getValue()) && StringUtils.isBlank(coreCompetency.getValue())) return "OOPS! This job does not seem to exist.";
+         else if (StringUtils.isBlank(this.getName())) this.setName(d);
+         else if (StringUtils.isBlank(employer.getValue())) employer.setValue(d);
+         else if (StringUtils.isBlank(location.getValue())) location.setValue(d);
+         else if (StringUtils.isBlank(positionType.getValue())) positionType.setValue(d);
+         else if (StringUtils.isBlank(coreCompetency.getValue())) coreCompetency.setValue(d);
 
            return "\n" +
                         "\n" + "ID: " + id +
